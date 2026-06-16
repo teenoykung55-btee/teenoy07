@@ -3,35 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Code Portfolio</title>
+    <title>My Portfolio | แฟ้มสะสมผลงานของฉัน</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; background-color: #f4f4f9; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; }
-        h1 { color: #333; }
-        .project { border-left: 5px solid #007bff; padding-left: 15px; margin: 20px 0; }
-        a { color: #007bff; text-decoration: none; }
+        /* สไตล์พื้นฐาน */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #333;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #4b6cb7;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        section h2 {
+            color: #182848;
+            border-bottom: 3px solid #4b6cb7;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ตกแต่งส่วนผลงาน (Grid) */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-info {
+            padding: 1rem;
+        }
+
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+            color: #4b6cb7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #182848;
+            color: white;
+            margin-top: 4rem;
+        }
+
+        /* รองรับมือถือ */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            nav { flex-direction: column; text-align: center; }
+        }
     </style>
 </head>
 <body>
+
+    <header>
+        <h1>วิชยุตม์ สมสะอาด</h1>
+        <p>นักเรียนชั้นมัธยมศึกษาปีที่ 6 | แฟ้มสะสมผลงานดิจิทัล</p>
+    </header>
+
+    <nav>
+        <a href="#about">เกี่ยวกับฉัน</a>
+        <a href="#education">ประวัติการศึกษา</a>
+        <a href="#projects">ผลงานชิ้นโบว์แดง</a>
+        <a href="#contact">ติดต่อ</a>
+    </nav>
+
     <div class="container">
-        <h1>แฟ้มสะสมผลงาน (Code Sharing Portfolio)</h1>
-        <p>ยินดีต้อนรับสู่พื้นที่รวบรวมโปรเจกต์และการเขียนโค้ดของฉัน</p>
         
-        <hr>
+        <section id="about">
+            <h2>เกี่ยวกับฉัน</h2>
+            <p>สวัสดีครับ/ค่ะ ยินดีต้อนรับสู่แฟ้มสะสมผลงานของฉัน ข้อมูลตรงนี้ให้นักเรียนเขียนแนะนำตัวเองสั้นๆ เกี่ยวกับความสนใจ ความสามารถพิเศษ หรือเป้าหมายในอนาคตที่อยากจะเป็น...</p>
+        </section>
 
-        <h2>ผลงานของฉัน (My Projects)</h2>
-        
-        <div class="project">
-            <h3>1. โปรเจกต์เครื่องคิดเลข (Python)</h3>
-            <p>โปรแกรมคำนวณเลขพื้นฐาน พัฒนาด้วยภาษา Python</p>
-            <a href="https://github.com/YOUR-USERNAME/YOUR-REPO-NAME" target="_blank">🔗 ดูซอร์สโค้ดบน GitHub</a>
-        </div>
+        <section id="education">
+            <h2>ประวัติการศึกษา</h2>
+            <ul>
+                <li><strong>มัธยมศึกษาตอนปลาย:</strong> โรงเรียนXXXXXX (ปี พ.ศ. 25XX - ปัจจุบัน)</li>
+                <li><strong>มัธยมศึกษาตอนต้น:</strong> โรงเรียนXXXXXX (ปี พ.ศ. 25XX - 25XX)</li>
+            </ul>
+        </section>
 
-        <div class="project">
-            <h3>2. เว็บไซต์พยากรณ์อากาศ (JavaScript)</h3>
-            <p>เว็บแอปพลิเคชันดึงข้อมูล Weather API มาแสดงผลแบบ Real-time</p>
-            <a href="https://github.com/YOUR-USERNAME/YOUR-REPO-NAME" target="_blank">🔗 ดูซอร์สโค้ดบน GitHub</a>
-        </div>
+        <section id="projects">
+            <h2>ผลงานที่ภาคภูมิใจ</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>โครงงานวิทยาศาสตร์</h3>
+                        <p>อธิบายสั้นๆ เกี่ยวกับโครงงานที่เคยทำ ได้รับรางวัลอะไรไหม หรือทำเกี่ยวกับอะไร</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>กิจกรรมจิตอาสา</h3>
+                        <p>เขียนเล่าถึงกิจกรรมพัฒนาโรงเรียน หรือการช่วยงานชุมชนที่นักเรียนเคยเข้าร่วม</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>เกียรติบัตรการแข่งทักษะ</h3>
+                        <p>รายละเอียดการแข่งขัน หรือทักษะคอมพิวเตอร์/ภาษา ที่นักเรียนภูมิใจ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>ช่องทางการติดต่อ</h2>
+            <p>📧 <strong>อีเมล:</strong> myemail@example.com</p>
+            <p>🌐 <strong>GitHub:</strong> github.com/username</p>
+        </section>
+
     </div>
+
+    <footer>
+        <p>&copy; 2026 สร้างด้วยความภูมิใจโดย [ชื่อของนักเรียน]</p>
+    </footer>
+
 </body>
 </html>
